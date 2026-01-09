@@ -17,24 +17,40 @@ namespace GitProjekt
     /// </summary>
     public partial class MainWindow : Window
     {
+
+        private void ReadDbIntoTestLabel() {
+
+            using StreamReader reader = new("db.csv");
+
+            string db = reader.ReadToEnd();
+
+            Test.Content = db;
+
+            reader.Close();
+
+        }
+
         public MainWindow()
         {
             InitializeComponent();
 
-
-            var baseDir = AppContext.BaseDirectory;
-            var path = System.IO.Path.Combine(baseDir, "aa");
-
-            using StreamReader reader = new("C:/db/db.csv");
-
-            string db =  reader.ReadToEnd();
-
-            Test.Content = db;
+            ReadDbIntoTestLabel();
 
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
+            var imie = Record_Imie.Text;
+            var nazwisko = Record_Nazwisko.Text;
+            var data_urodzenia = Record_DataUrodzenia.Text;
+
+            using StreamWriter writer = new("db.csv",true);
+
+            writer.WriteLine($"{imie},{nazwisko},{data_urodzenia}");
+
+            writer.Close();
+
+            ReadDbIntoTestLabel();
 
         }
     }
