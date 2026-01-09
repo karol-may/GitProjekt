@@ -1,4 +1,5 @@
-﻿using System.Text;
+﻿using System.IO;
+using System.Text;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
@@ -19,6 +20,22 @@ namespace GitProjekt
         public MainWindow()
         {
             InitializeComponent();
+
+
+            var baseDir = AppContext.BaseDirectory;
+            var path = System.IO.Path.Combine(baseDir, "aa");
+
+            using StreamReader reader = new("C:/db/db.csv");
+
+            string db =  reader.ReadToEnd();
+
+            Test.Content = db;
+
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }

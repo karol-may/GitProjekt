@@ -7,7 +7,21 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-        <Label Content="Karol May" HorizontalAlignment="Left" Margin="643,72,0,0" VerticalAlignment="Top" RenderTransformOrigin="4.723,-4.247"/>
-
+        <GroupBox HorizontalAlignment="Left" Height="414" Header="Dodaj użytkownika" Margin="10,0,0,0" VerticalAlignment="Top" Width="328">
+            <Grid Height="391">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <Button x:Name="Save_Button" Grid.Column="1" Content="Zapisz" HorizontalAlignment="Center" Margin="0,211,0,0" VerticalAlignment="Top" Click="Button_Click" Width="67"/>
+                <Label Content="Imię:" HorizontalAlignment="Left" Margin="28,52,0,0" VerticalAlignment="Top" Height="23"/>
+                <Label Content="Nazwisko:" HorizontalAlignment="Left" Margin="28,82,0,0" VerticalAlignment="Top" Height="24"/>
+                <Label Content="Data urodzenia:" HorizontalAlignment="Left" Margin="28,117,0,0" VerticalAlignment="Top" Height="24"/>
+                <TextBox Grid.Column="1" HorizontalAlignment="Center" Margin="0,57,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+                <TextBox Grid.Column="1" HorizontalAlignment="Center" Margin="0,88,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+                <TextBox Grid.Column="1" HorizontalAlignment="Center" Margin="0,123,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+            </Grid>
+        </GroupBox>
+        <Label x:Name="Test" Content="Label" HorizontalAlignment="Left" Margin="383,82,0,0" VerticalAlignment="Top" Height="162" Width="351"/>
     </Grid>
 </Window>
